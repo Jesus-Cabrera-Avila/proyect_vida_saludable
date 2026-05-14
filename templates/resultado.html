@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado IMC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Resultado IMC</h1>
+
+    <h2>{{ nombre }}</h2>
+
+    <p><strong>Tu IMC es:</strong> {{ imc }}</p>
+
+    <p><strong>Clasificación:</strong> {{ clasificacion }}</p>
+
+    <p><strong>Recomendación:</strong> {{ recomendacion }}</p>
+
+    <hr>
+
+    <p>
+        NOTA: El IMC no siempre refleja la composición corporal individual.
+    </p>
+
+    <a href="/">
+        <button>Volver al inicio</button>
+    </a>
+
+</div>
+
+</body>
+</html>

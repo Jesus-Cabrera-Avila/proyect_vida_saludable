@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcular IMC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Calculadora IMC</h1>
+
+    <form method="POST">
+
+        <input type="text" name="nombre" placeholder="Nombre" required>
+
+        <input type="number" step="0.01" name="peso" placeholder="Peso (kg)" required>
+
+        <input type="number" step="0.01" name="estatura" placeholder="Estatura (m)" required>
+
+        <button type="submit">Calcular</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
