@@ -3,12 +3,17 @@ from database import conectar
 
 app = Flask(__name__)
 
+# -------------------------
 # Página principal
+# -------------------------
 @app.route('/')
 def inicio():
     return render_template('index.html')
 
-# Página IMC
+
+# -------------------------
+# Página IMC (guardar datos)
+# -------------------------
 @app.route('/imc', methods=['GET', 'POST'])
 def imc():
 
@@ -45,22 +50,16 @@ def imc():
             clasificacion = "Obesidad grado III"
             recomendacion = "Atención médica inmediata y plan alimenticio especializado."
 
-        # Guardar en BD
+        # Guardar en base de datos
         conexion = conectar()
         cursor = conexion.cursor()
 
         sql = """
         INSERT INTO alumnos(nombre, peso, estatura, imc, clasificacion)
-        VALUES(%s,%s,%s,%s,%s)
+        VALUES (%s, %s, %s, %s, %s)
         """
 
-        valores = (
-            nombre,
-            peso,
-            estatura,
-            resultado_imc,
-            clasificacion
-        )
+        valores = (nombre, peso, estatura, resultado_imc, clasificacion)
 
         cursor.execute(sql, valores)
         conexion.commit()
@@ -78,5 +77,27 @@ def imc():
 
     return render_template('imc.html')
 
+
+# -------------------------
+# Mostrar alumnos (historial)
+# -------------------------
+@app.route('/alumnos')
+def alumnos():
+
+    conexion = conectar()
+    cursor = conexion.cursor(dictionary=True)
+
+    cursor.execute("SELECT * FROM alumnos")
+    datos = cursor.fetchall()
+
+    cursor.close()
+    conexion.close()
+
+    return render_template("alumnos.html", alumnos=datos)
+
+
+# -------------------------
+# Ejecutar servidor
+# -------------------------
 if __name__ == '__main__':
     app.run(debug=True)
