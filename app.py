@@ -3,17 +3,13 @@ from database import conectar
 
 app = Flask(__name__)
 
-# -------------------------
 # Página principal
-# -------------------------
 @app.route('/')
 def inicio():
     return render_template('index.html')
 
 
-# -------------------------
 # Página IMC (guardar datos)
-# -------------------------
 @app.route('/imc', methods=['GET', 'POST'])
 def imc():
 
@@ -78,9 +74,7 @@ def imc():
     return render_template('imc.html')
 
 
-# -------------------------
 # Mostrar alumnos (historial)
-# -------------------------
 @app.route('/alumnos')
 def alumnos():
 
@@ -96,8 +90,6 @@ def alumnos():
     return render_template("alumnos.html", alumnos=datos)
 
 
-# -------------------------
 # Ejecutar servidor
-# -------------------------
 if __name__ == '__main__':
     app.run(debug=True)
