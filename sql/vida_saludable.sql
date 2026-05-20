@@ -5,6 +5,7 @@ USE vida_saludable;
 CREATE TABLE alumnos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100),
+    sexo VARCHAR(20),
     peso FLOAT,
     estatura FLOAT,
     imc FLOAT,

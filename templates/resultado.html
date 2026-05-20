@@ -17,6 +17,10 @@
 
     <p><strong>Clasificación:</strong> {{ clasificacion }}</p>
 
+    <img src="{{ url_for('static', filename=imagen_imc) }}"
+         alt="Clasificación IMC"
+         class="img-imc">
+
     <p><strong>Recomendación:</strong> {{ recomendacion }}</p>
 
     <hr>

@@ -1,34 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Alumnos</title>
+    <meta charset="UTF-8">
+    <title>Historial IMC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<h1>Lista de alumnos</h1>
+<div class="container">
 
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Peso</th>
-        <th>Estatura</th>
-        <th>IMC</th>
-        <th>Clasificación</th>
-    </tr>
+    <h1>Historial de alumnos</h1>
 
-    {% for a in alumnos %}
-    <tr>
-        <td>{{ a.id }}</td>
-        <td>{{ a.nombre }}</td>
-        <td>{{ a.peso }}</td>
-        <td>{{ a.estatura }}</td>
-        <td>{{ a.imc }}</td>
-        <td>{{ a.clasificacion }}</td>
-    </tr>
-    {% endfor %}
+    <table class="tabla">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Sexo</th>
+            <th>Peso</th>
+            <th>Estatura</th>
+            <th>IMC</th>
+            <th>Clasificación</th>
+        </tr>
 
-</table>
+        {% for a in alumnos %}
+        <tr>
+            <td>{{ a.id }}</td>
+            <td>{{ a.nombre }}</td>
+            <td>{{ a.sexo }}</td>
+            <td>{{ a.peso }} kg</td>
+            <td>{{ a.estatura }} m</td>
+            <td>{{ a.imc }}</td>
+            <td>{{ a.clasificacion }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="/">
+        <button>Volver al inicio</button>
+    </a>
+
+</div>
 
 </body>
 </html>
