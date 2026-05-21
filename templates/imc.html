@@ -1,35 +1,84 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Calcular IMC</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+{% extends "layout.html" %}
 
-<div class="container">
+{% block title %}
+Calculadora IMC
+{% endblock %}
 
-    <h1>Calculadora IMC</h1>
+{% block content %}
 
-    <form method="POST">
+<div class="row justify-content-center">
 
-        <input type="text" name="nombre" placeholder="Nombre" required>
+    <div class="col-md-6">
 
-        <select name="sexo" required>
-            <option value="">Selecciona tu sexo</option>
-            <option value="hombre">Hombre</option>
-            <option value="mujer">Mujer</option>
-        </select>
+        <div class="card shadow p-4">
 
-        <input type="number" step="0.01" name="peso" placeholder="Peso (kg)" required>
+            <h1 class="text-center text-success mb-4">
+                📏 Calculadora IMC
+            </h1>
 
-        <input type="number" step="0.01" name="estatura" placeholder="Estatura (m)" required>
+            <form method="POST">
 
-        <button type="submit">Calcular</button>
+                <div class="mb-3">
+                    <input type="text"
+                           name="nombre"
+                           class="form-control"
+                           placeholder="Nombre"
+                           required>
+                </div>
 
-    </form>
+                <div class="mb-3">
+                    <select name="sexo"
+                            class="form-select"
+                            required>
+
+                        <option value="">
+                            Selecciona tu sexo
+                        </option>
+
+                        <option value="hombre">
+                            Hombre
+                        </option>
+
+                        <option value="mujer">
+                            Mujer
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <input type="number"
+                           step="0.01"
+                           name="peso"
+                           class="form-control"
+                           placeholder="Peso (kg)"
+                           required>
+                </div>
+
+                <div class="mb-3">
+                    <input type="number"
+                           step="0.01"
+                           name="estatura"
+                           class="form-control"
+                           placeholder="Estatura (m)"
+                           required>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit"
+                            class="btn btn-success">
+
+                        Calcular IMC
+
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
 
 </div>
 
-</body>
-</html>
+{% endblock %}

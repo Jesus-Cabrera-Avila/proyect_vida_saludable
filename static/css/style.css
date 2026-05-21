@@ -78,3 +78,38 @@ td{
 tr:nth-child(even){
     background: #f2f2f2;
 }
+body{
+    background-color:#f4f7f8;
+}
+
+.card{
+    border:none;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+footer{
+    margin-top:50px;
+}
+
+img{
+    object-fit:cover;
+}
+.receta-img{
+    height:250px;
+    object-fit:cover;
+}
+
+.modal-content{
+    border-radius:20px;
+}

@@ -1,0 +1,380 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Recetas Saludables
+{% endblock %}
+
+{% block content %}
+
+<!-- TÍTULO -->
+<div class="d-flex justify-content-between align-items-center mb-5">
+
+    <h1 class="text-success">
+        🍎 Recetas Saludables
+    </h1>
+
+    <a href="/agregar_receta"
+       class="btn btn-success">
+
+        ➕ Agregar Receta
+
+    </a>
+
+</div>
+
+<!-- ====================================== -->
+<!-- RECETAS PREDETERMINADAS -->
+<!-- ====================================== -->
+
+<h2 class="mb-4 text-success">
+    ⭐ Recetas Recomendadas
+</h2>
+
+<div class="row g-4 mb-5">
+
+    <!-- ENSALADA -->
+    <div class="col-md-4">
+
+        <div class="card shadow h-100">
+
+            <img src="{{ url_for('static', filename='img/ensalada.jpg') }}"
+                 class="card-img-top receta-img">
+
+            <div class="card-body text-center">
+
+                <h3>🥗 Ensalada Saludable</h3>
+
+                <p>
+                    Rica en vitaminas y minerales.
+                </p>
+
+                <button class="btn btn-success"
+                        data-bs-toggle="modal"
+                        data-bs-target="#ensaladaModal">
+
+                    Ver Receta
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- AVENA -->
+    <div class="col-md-4">
+
+        <div class="card shadow h-100">
+
+            <img src="{{ url_for('static', filename='img/avena.jpg') }}"
+                 class="card-img-top receta-img">
+
+            <div class="card-body text-center">
+
+                <h3>🥣 Avena con Frutas</h3>
+
+                <p>
+                    Excelente desayuno energético.
+                </p>
+
+                <button class="btn btn-success"
+                        data-bs-toggle="modal"
+                        data-bs-target="#avenaModal">
+
+                    Ver Receta
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MOLE -->
+    <div class="col-md-4">
+
+        <div class="card shadow h-100">
+
+            <img src="{{ url_for('static', filename='img/mole.jpg') }}"
+                 class="card-img-top receta-img">
+
+            <div class="card-body text-center">
+
+                <h3>🇲🇽 Mole Saludable</h3>
+
+                <p>
+                    Tradición mexicana balanceada.
+                </p>
+
+                <button class="btn btn-success"
+                        data-bs-toggle="modal"
+                        data-bs-target="#moleModal">
+
+                    Ver Receta
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ====================================== -->
+<!-- RECETAS DE USUARIOS -->
+<!-- ====================================== -->
+
+<h2 class="mb-4 text-success">
+    🧑‍🍳 Recetas de la Comunidad
+</h2>
+
+<div class="row g-4">
+
+    {% for r in recetas %}
+
+    <div class="col-md-4">
+
+        <div class="card shadow h-100">
+
+            <img src="{{ url_for('static',
+                    filename='img/' + r.imagen) }}"
+                 class="card-img-top receta-img">
+
+            <div class="card-body text-center">
+
+                <h3>{{ r.nombre }}</h3>
+
+                <p>
+                    {{ r.descripcion }}
+                </p>
+
+                <button class="btn btn-success"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal{{ r.id }}">
+
+                    Ver Receta
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade"
+         id="modal{{ r.id }}">
+
+        <div class="modal-dialog modal-lg">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h2>{{ r.nombre }}</h2>
+
+                    <button class="btn-close"
+                            data-bs-dismiss="modal"></button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <img src="{{ url_for('static',
+                             filename='img/' + r.imagen) }}"
+                         class="img-fluid rounded mb-4">
+
+                    <h4>Ingredientes</h4>
+
+                    <p>{{ r.ingredientes }}</p>
+
+                    <h4>Preparación</h4>
+
+                    <p>{{ r.preparacion }}</p>
+
+                    <h4>Tips</h4>
+
+                    <p>{{ r.tips }}</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<!-- ====================================== -->
+<!-- MODAL ENSALADA -->
+<!-- ====================================== -->
+
+<div class="modal fade" id="ensaladaModal">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>🥗 Ensalada Saludable</h2>
+
+                <button class="btn-close"
+                        data-bs-dismiss="modal"></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <img src="{{ url_for('static',
+                         filename='img/ensalada.jpg') }}"
+                     class="img-fluid rounded mb-4">
+
+                <h4>Ingredientes</h4>
+
+                <ul>
+                    <li>Lechuga</li>
+                    <li>Tomate</li>
+                    <li>Pepino</li>
+                    <li>Zanahoria</li>
+                </ul>
+
+                <h4>Preparación</h4>
+
+                <p>
+                    Lava y corta los ingredientes.
+                    Mézclalos y agrega limón.
+                </p>
+
+                <h4>Beneficios</h4>
+
+                <p>
+                    Aporta vitaminas y mejora digestión.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ====================================== -->
+<!-- MODAL AVENA -->
+<!-- ====================================== -->
+
+<div class="modal fade" id="avenaModal">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>🥣 Avena con Frutas</h2>
+
+                <button class="btn-close"
+                        data-bs-dismiss="modal"></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <img src="{{ url_for('static',
+                         filename='img/avena.jpg') }}"
+                     class="img-fluid rounded mb-4">
+
+                <h4>Ingredientes</h4>
+
+                <ul>
+                    <li>Avena</li>
+                    <li>Leche</li>
+                    <li>Plátano</li>
+                    <li>Fresas</li>
+                </ul>
+
+                <h4>Preparación</h4>
+
+                <p>
+                    Cocina la avena y agrega fruta fresca.
+                </p>
+
+                <h4>Beneficios</h4>
+
+                <p>
+                    Excelente fuente de energía y fibra.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ====================================== -->
+<!-- MODAL MOLE -->
+<!-- ====================================== -->
+
+<div class="modal fade" id="moleModal">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>🇲🇽 Mole Saludable</h2>
+
+                <button class="btn-close"
+                        data-bs-dismiss="modal"></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <img src="{{ url_for('static',
+                         filename='img/mole.jpg') }}"
+                     class="img-fluid rounded mb-4">
+
+                <h4>Ingredientes</h4>
+
+                <ul>
+                    <li>Chile</li>
+                    <li>Cacao</li>
+                    <li>Ajonjolí</li>
+                    <li>Pollo</li>
+                </ul>
+
+                <h4>Historia</h4>
+
+                <p>
+                    Platillo tradicional mexicano
+                    con origen indígena y español.
+                </p>
+
+                <h4>Beneficios</h4>
+
+                <p>
+                    Rico en proteínas y tradición cultural.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

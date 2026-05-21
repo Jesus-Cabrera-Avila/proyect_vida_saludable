@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Agregar Receta
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+        <div class="card shadow p-4">
+
+            <h1 class="text-center text-success mb-4">
+                ➕ Agregar Nueva Receta
+            </h1>
+
+            <form method="POST">
+
+                <div class="mb-3">
+
+                    <label>Nombre</label>
+
+                    <input type="text"
+                           name="nombre"
+                           class="form-control"
+                           required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Descripción</label>
+
+                    <textarea name="descripcion"
+                              class="form-control"
+                              rows="3"
+                              required></textarea>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Ingredientes</label>
+
+                    <textarea name="ingredientes"
+                              class="form-control"
+                              rows="5"
+                              required></textarea>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Preparación</label>
+
+                    <textarea name="preparacion"
+                              class="form-control"
+                              rows="5"
+                              required></textarea>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Tips Saludables</label>
+
+                    <textarea name="tips"
+                              class="form-control"
+                              rows="3"></textarea>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Nombre de la imagen</label>
+
+                    <input type="text"
+                           name="imagen"
+                           class="form-control"
+                           placeholder="ejemplo.jpg">
+
+                </div>
+
+                <button type="submit"
+                        class="btn btn-success w-100">
+
+                    Guardar Receta
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

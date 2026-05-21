@@ -1,48 +1,55 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Historial IMC</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+{% extends "layout.html" %}
 
-<div class="container">
+{% block title %}
+Historial IMC
+{% endblock %}
 
-    <h1>Historial de alumnos</h1>
+{% block content %}
 
-    <table class="tabla">
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Sexo</th>
-            <th>Peso</th>
-            <th>Estatura</th>
-            <th>IMC</th>
-            <th>Clasificación</th>
-        </tr>
+<h1 class="text-center text-success mb-5">
+    📊 Historial de alumnos
+</h1>
 
-        {% for a in alumnos %}
-        <tr>
-            <td>{{ a.id }}</td>
-            <td>{{ a.nombre }}</td>
-            <td>{{ a.sexo }}</td>
-            <td>{{ a.peso }} kg</td>
-            <td>{{ a.estatura }} m</td>
-            <td>{{ a.imc }}</td>
-            <td>{{ a.clasificacion }}</td>
-        </tr>
-        {% endfor %}
+<div class="table-responsive">
+
+    <table class="table table-striped table-hover shadow">
+
+        <thead class="table-success">
+
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Sexo</th>
+                <th>Peso</th>
+                <th>Estatura</th>
+                <th>IMC</th>
+                <th>Clasificación</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for a in alumnos %}
+
+            <tr>
+
+                <td>{{ a.id }}</td>
+                <td>{{ a.nombre }}</td>
+                <td>{{ a.sexo }}</td>
+                <td>{{ a.peso }} kg</td>
+                <td>{{ a.estatura }} m</td>
+                <td>{{ a.imc }}</td>
+                <td>{{ a.clasificacion }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
 
     </table>
 
-    <br>
-
-    <a href="/">
-        <button>Volver al inicio</button>
-    </a>
-
 </div>
 
-</body>
-</html>
+{% endblock %}

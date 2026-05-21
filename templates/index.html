@@ -1,35 +1,87 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Vida Saludable</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+{% extends "layout.html" %}
 
-    <div class="container">
+{% block title %}
+Inicio
+{% endblock %}
 
-        <h1>🥗 Vida Saludable</h1>
+{% block content %}
 
-        <p>
-            Una vida saludable incluye buena alimentación,
-            actividad física y descanso adecuado.
-        </p>
+<div class="text-center">
 
-        <h2>Beneficios</h2>
+    <h1 class="display-4 fw-bold text-success">
+        🥗 Vida Saludable
+    </h1>
 
-        <ul>
-            <li>Mayor rendimiento académico</li>
-            <li>Más energía</li>
-            <li>Mejor concentración</li>
-            <li>Menor estrés</li>
-        </ul>
+    <p class="lead mt-4">
+        Proyecto escolar enfocado en salud física,
+        salud mental, química del cuerpo humano
+        e historia de la alimentación mexicana.
+    </p>
 
-        <a href="/imc">
-            <button>Calcular IMC</button>
-        </a>
+</div>
 
+<div class="row mt-5 g-4">
+
+    <div class="col-md-4">
+        <div class="card shadow h-100">
+
+            <div class="card-body text-center">
+
+                <h3>📏 IMC</h3>
+
+                <p>
+                    Calcula tu Índice de Masa Corporal
+                    y conoce tu estado de salud.
+                </p>
+
+                <a href="/imc" class="btn btn-success">
+                    Calcular IMC
+                </a>
+
+            </div>
+        </div>
     </div>
 
-</body>
-</html>
+    <div class="col-md-4">
+        <div class="card shadow h-100">
+
+            <div class="card-body text-center">
+
+                <h3>🧪 Química</h3>
+
+                <p>
+                    Aprende sobre cortisol,
+                    metabolismo y reacciones químicas del cuerpo.
+                </p>
+
+                <a href="/quimica" class="btn btn-success">
+                    Ver información
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow h-100">
+
+            <div class="card-body text-center">
+
+                <h3>📜 Historia</h3>
+
+                <p>
+                    Descubre el origen del mole y
+                    su importancia cultural en México.
+                </p>
+
+                <a href="/historia" class="btn btn-success">
+                    Conocer más
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
