@@ -1,9 +1,25 @@
-import mysql.connector
+import sqlite3
 
 def conectar():
-    return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="vida_saludable"
+    conexion = sqlite3.connect("vida_saludable.db")
+    conexion.row_factory = sqlite3.Row
+    return conexion
+
+
+def crear_tabla():
+    conexion = conectar()
+    cursor = conexion.cursor()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS alumnos (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nombre TEXT,
+        peso REAL,
+        estatura REAL,
+        imc REAL,
+        clasificacion TEXT
     )
+    """)
+
+    conexion.commit()
+    conexion.close()

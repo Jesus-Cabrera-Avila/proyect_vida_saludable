@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from database import conectar
+from database import conectar, crear_tabla
 
 app = Flask(__name__)
 
@@ -85,7 +85,7 @@ def imc():
 
         sql = """
         INSERT INTO alumnos(nombre, peso, estatura, imc, clasificacion)
-        VALUES (%s, %s, %s, %s, %s)
+        VALUES (?, ?, ?, ?, ?)
         """
 
         valores = (
@@ -120,10 +120,10 @@ def imc():
 def alumnos():
 
     conexion = conectar()
-    cursor = conexion.cursor(dictionary=True)
+    cursor = conexion.cursor()
 
     cursor.execute("SELECT * FROM alumnos")
-    datos = cursor.fetchall()
+    datos = [dict(fila) for fila in cursor.fetchall()]
 
     cursor.close()
     conexion.close()
@@ -133,4 +133,5 @@ def alumnos():
 
 # Ejecutar servidor
 if __name__ == '__main__':
+    crear_tabla()
     app.run(debug=True)
