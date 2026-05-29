@@ -23,7 +23,7 @@ Recetas Saludables
 </div>
 
 <!-- ====================================== -->
-<!-- RECETAS PREDETERMINADAS -->
+<!-- RECETAS RECOMENDADAS -->
 <!-- ====================================== -->
 
 <h2 class="mb-4 text-success">
@@ -32,25 +32,26 @@ Recetas Saludables
 
 <div class="row g-4 mb-5">
 
-    <!-- ENSALADA -->
+    <!-- TOSTADAS -->
     <div class="col-md-4">
 
         <div class="card shadow h-100">
 
-            <img src="{{ url_for('static', filename='img/ensalada.jpg') }}"
+            <img src="{{ url_for('static',
+                    filename='img/aguacate.jpg') }}"
                  class="card-img-top receta-img">
 
             <div class="card-body text-center">
 
-                <h3>🥗 Ensalada Saludable</h3>
+                <h3>🥑 Tostadas de Aguacate</h3>
 
                 <p>
-                    Rica en vitaminas y minerales.
+                    Desayuno saludable y económico.
                 </p>
 
                 <button class="btn btn-success"
                         data-bs-toggle="modal"
-                        data-bs-target="#ensaladaModal">
+                        data-bs-target="#tostadasModal">
 
                     Ver Receta
 
@@ -62,25 +63,26 @@ Recetas Saludables
 
     </div>
 
-    <!-- AVENA -->
+    <!-- POLLO -->
     <div class="col-md-4">
 
         <div class="card shadow h-100">
 
-            <img src="{{ url_for('static', filename='img/avena.jpg') }}"
+            <img src="{{ url_for('static',
+                    filename='img/pollo.avif') }}"
                  class="card-img-top receta-img">
 
             <div class="card-body text-center">
 
-                <h3>🥣 Avena con Frutas</h3>
+                <h3>🍗 Pollo con Verduras</h3>
 
                 <p>
-                    Excelente desayuno energético.
+                    Comida rica en proteínas.
                 </p>
 
                 <button class="btn btn-success"
                         data-bs-toggle="modal"
-                        data-bs-target="#avenaModal">
+                        data-bs-target="#polloModal">
 
                     Ver Receta
 
@@ -92,25 +94,26 @@ Recetas Saludables
 
     </div>
 
-    <!-- MOLE -->
+    <!-- LICUADO -->
     <div class="col-md-4">
 
         <div class="card shadow h-100">
 
-            <img src="{{ url_for('static', filename='img/mole.jpg') }}"
+            <img src="{{ url_for('static',
+                    filename='img/platano.jpg') }}"
                  class="card-img-top receta-img">
 
             <div class="card-body text-center">
 
-                <h3>🇲🇽 Mole Saludable</h3>
+                <h3>🍌 Licuado de Plátano</h3>
 
                 <p>
-                    Tradición mexicana balanceada.
+                    Bebida energética y saludable.
                 </p>
 
                 <button class="btn btn-success"
                         data-bs-toggle="modal"
-                        data-bs-target="#moleModal">
+                        data-bs-target="#licuadoModal">
 
                     Ver Receta
 
@@ -123,6 +126,25 @@ Recetas Saludables
     </div>
 
 </div>
+
+<!-- ====================================== -->
+<!-- MODAL TOSTADAS -->
+<!-- ====================================== -->
+
+<div class="modal fade" id="tostadasModal"> <div class="modal-dialog modal-lg modal-dialog-scrollable"> <div class="modal-content"> <div class="modal-header"> <h2>🥑 Tostadas de Aguacate</h2> <button class="btn-close" data-bs-dismiss="modal"></button> </div> <div class="modal-body"> <img src="{{ url_for('static', filename='img/aguacate.jpg') }}" class="img-fluid rounded mb-4"> <h4>📋 Descripción</h4> <p> Las tostadas de aguacate son una receta sencilla, económica y muy saludable. Son ideales para desayunos, cenas ligeras o como snack durante el día. El aguacate aporta grasas saludables, vitaminas y minerales importantes para el cuerpo. </p> <h4>🧂 Ingredientes</h4> <ul> <li>2 tostadas horneadas</li> <li>1 aguacate maduro</li> <li>1 tomate mediano</li> <li>1 limón</li> <li>Sal al gusto</li> <li>Pimienta al gusto</li> <li>Opcional: queso fresco o pollo deshebrado </li> </ul> <h4>👨‍🍳 Preparación Paso a Paso</h4> <ol> <li> Lava correctamente el tomate usando agua limpia. </li> <li> Corta el tomate en pequeños cubos y colócalo en un recipiente. </li> <li> Parte el aguacate por la mitad y retira la semilla. </li> <li> Con ayuda de una cuchara, extrae todo el aguacate. </li> <li> Coloca el aguacate en un plato y tritúralo con un tenedor hasta obtener una mezcla cremosa. </li> <li> Agrega unas gotas de limón para evitar que el aguacate se ponga oscuro. </li> <li> Añade sal y pimienta al gusto. </li> <li> Unta la mezcla sobre las tostadas. </li> <li> Coloca el tomate picado encima. </li> <li> Si deseas, puedes agregar queso fresco o pollo deshebrado. </li> <li> Sirve inmediatamente para disfrutar la textura crujiente. </li> </ol> <h4>⏱ Tiempo de Preparación</h4> <p> Entre 10 y 15 minutos. </p> <h4>🔥 Calorías Aproximadas</h4> <p> Aproximadamente 250 a 300 calorías por porción. </p> <h4>💪 Beneficios Nutricionales</h4> <p> El aguacate contiene grasas saludables que ayudan al corazón. También aporta fibra, vitaminas E, C y K. El tomate aporta antioxidantes y ayuda al sistema inmunológico. </p> <h4>💡 Consejos</h4> <ul> <li> Usa tostadas horneadas para reducir grasa y calorías. </li> <li> Puedes agregar chile en polvo para dar más sabor. </li> <li> Acompaña con agua natural o jugo sin azúcar. </li> </ul> </div> </div> </div> </div>
+
+<!-- ====================================== -->
+<!-- MODAL POLLO -->
+<!-- ====================================== -->
+
+<div class="modal fade" id="polloModal"> <div class="modal-dialog modal-lg modal-dialog-scrollable"> <div class="modal-content"> <div class="modal-header"> <h2>🍗 Pollo con Verduras</h2> <button class="btn-close" data-bs-dismiss="modal"></button> </div> <div class="modal-body"> <img src="{{ url_for('static', filename='img/pollo.avif') }}" class="img-fluid rounded mb-4"> <h4>📋 Descripción</h4> <p> Esta receta es perfecta para una comida balanceada y nutritiva. El pollo aporta proteína mientras que las verduras contienen vitaminas y minerales importantes. </p> <h4>🧂 Ingredientes</h4> <ul> <li>1 pechuga de pollo</li> <li>1 zanahoria</li> <li>1 taza de brócoli</li> <li>1 calabaza</li> <li>1 diente de ajo</li> <li>Media cebolla</li> <li>1 cucharada pequeña de aceite</li> <li>Sal y pimienta</li> <li>Opcional: arroz integral </li> </ul> <h4>👨‍🍳 Preparación Paso a Paso</h4> <ol> <li> Lava todas las verduras correctamente. </li> <li> Pela la zanahoria y córtala en pequeños trozos. </li> <li> Corta la calabaza y el brócoli. </li> <li> Pica el ajo y la cebolla. </li> <li> Corta la pechuga de pollo en cubos medianos. </li> <li> Coloca un sartén a fuego medio. </li> <li> Agrega una cucharada pequeña de aceite. </li> <li> Cocina el ajo y la cebolla durante 2 minutos. </li> <li> Añade el pollo y cocina hasta que cambie completamente de color. </li> <li> Agrega las verduras. </li> <li> Cocina durante 10 a 15 minutos moviendo constantemente. </li> <li> Añade sal y pimienta al gusto. </li> <li> Sirve caliente. </li> </ol> <h4>⏱ Tiempo de Preparación</h4> <p> Entre 25 y 30 minutos. </p> <h4>🔥 Calorías Aproximadas</h4> <p> Aproximadamente 350 calorías por plato. </p> <h4>💪 Beneficios Nutricionales</h4> <p> El pollo aporta proteínas necesarias para músculos y energía. Las verduras contienen fibra, vitaminas y antioxidantes. </p> <h4>💡 Consejos</h4> <ul> <li> Evita usar demasiado aceite. </li> <li> Puedes cocinar las verduras al vapor para conservar más nutrientes. </li> <li> Acompaña con arroz integral o tortillas de maíz. </li> </ul> </div> </div> </div> </div>
+
+<!-- ====================================== -->
+<!-- MODAL LICUADO -->
+<!-- ====================================== -->
+
+<div class="modal fade" id="licuadoModal"> <div class="modal-dialog modal-lg modal-dialog-scrollable"> <div class="modal-content"> <div class="modal-header"> <h2>🍌 Licuado de Plátano</h2> <button class="btn-close" data-bs-dismiss="modal"></button> </div> <div class="modal-body"> <img src="{{ url_for('static', filename='img/platano.jpg') }}" class="img-fluid rounded mb-4"> <h4>📋 Descripción</h4> <p> El licuado de plátano es una bebida nutritiva y fácil de preparar. Es excelente para desayunar o recuperar energía después de realizar actividad física. </p> <h4>🧂 Ingredientes</h4> <ul> <li>1 plátano maduro</li> <li>1 taza de leche</li> <li>2 cucharadas de avena</li> <li>1 cucharada de miel</li> <li>Hielo al gusto</li> <li>Opcional: canela en polvo </li> </ul> <h4>👨‍🍳 Preparación Paso a Paso</h4> <ol> <li> Pela el plátano cuidadosamente. </li> <li> Corta el plátano en pequeños trozos. </li> <li> Coloca el plátano dentro de la licuadora. </li> <li> Agrega la leche. </li> <li> Añade las cucharadas de avena. </li> <li> Incorpora la miel. </li> <li> Si deseas una bebida fría, agrega hielo. </li> <li> Licúa durante aproximadamente un minuto. </li> <li> Sirve en un vaso grande. </li> <li> Opcionalmente agrega canela encima para más sabor. </li> </ol> <h4>⏱ Tiempo de Preparación</h4> <p> Entre 5 y 7 minutos. </p> <h4>🔥 Calorías Aproximadas</h4> <p> Aproximadamente 200 calorías. </p> <h4>💪 Beneficios Nutricionales</h4> <p> El plátano contiene potasio, la avena aporta fibra y la leche proporciona calcio y proteínas. </p> <h4>💡 Consejos</h4> <ul> <li> Usa leche baja en grasa para reducir calorías. </li> <li> Puedes agregar fresas o manzana para variar el sabor. </li> <li> Evita agregar demasiada azúcar. </li> </ul> </div> </div> </div> </div>
+
 
 <!-- ====================================== -->
 <!-- RECETAS DE USUARIOS -->
